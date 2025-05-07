@@ -4,6 +4,12 @@ import { useState } from "react";
 
 export default function Home() {
   const [taskList, setTaskList] = useState([]);
+  const handleDelete = (id) => {
+    {
+      const todoDelete = taskList.filter((todo) => todo.id !== id);
+      setTaskList(todoDelete);
+    }
+  };
 
   return (
     <div
@@ -23,7 +29,7 @@ export default function Home() {
       <Form setTaskList={setTaskList} taskList={taskList} />
 
       {taskList.map((task, id) => (
-        <Task key={id} task={task} />
+        <Task key={id} task={task} removeTaskById={handleDelete} />
       ))}
     </div>
   );

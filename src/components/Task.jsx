@@ -1,4 +1,4 @@
-export const Task = ({ task }) => {
+export const Task = ({ task, removeTaskById }) => {
   return (
     <div
       style={{
@@ -15,7 +15,13 @@ export const Task = ({ task }) => {
         <p>{task.taskName}</p>
       </div>
       <div>
-        <button>Delete</button>
+        <button
+          onClick={() => {
+            removeTaskById(task.id);
+          }}
+        >
+          Delete
+        </button>
       </div>
     </div>
   );
