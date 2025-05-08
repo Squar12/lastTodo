@@ -10,7 +10,13 @@ export const Task = ({ task, removeTaskById }) => {
         alignItems: "center",
       }}
     >
-      <div style={{ display: "flex", gap: "20px" }}>
+      <div
+        style={{
+          display: "flex",
+          gap: "20px",
+          textDecoration: task.isCompleted ? "line-through" : "none",
+        }}
+      >
         <input type="checkbox" />
         <p>{task.taskName}</p>
       </div>
