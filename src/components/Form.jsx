@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./styles/Form.module.css";
+import { Footer } from "./Footer";
 
 export const Form = ({ setTaskList, taskList }) => {
   const [inputValue, setInputValue] = useState("");
@@ -18,6 +19,11 @@ export const Form = ({ setTaskList, taskList }) => {
     setTaskList([...taskList, newTask]);
     setInputValue("");
   };
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      handleAdd();
+    }
+  };
 
   return (
     <div className={styles.container}>
@@ -27,6 +33,7 @@ export const Form = ({ setTaskList, taskList }) => {
           placeholder="Add a new task..."
           className={styles.taskInput}
           onChange={handleChange}
+          onKeyDown={handleKeyDown}
         />
       </div>
       <div>
