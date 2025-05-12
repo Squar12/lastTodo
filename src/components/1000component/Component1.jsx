@@ -1,4 +1,4 @@
-import { Component2 } from "./component2";
+import { Component2 } from "./Component2";
 
 export const Component1 = (props) => {
   console.log(props);
