@@ -9,11 +9,9 @@ export default function Home() {
   const [taskList, setTaskList] = useState([]);
   const [filter, setFilter] = useState("all");
 
-  // Удаан хугацаанд background өнгө хадгалах хэсэг
   useEffect(() => {
-    // background өнгийг хэзээ ч өөрчлөхгүй байх тохиргоо
-    document.body.style.backgroundColor = "#f4f4f9"; // энэ хувилбарыг та хүссэнээрээ өөрчлөх боломжтой
-  }, []); // Компонент анх ачаалагдах үед нэг удаа ажиллана
+    document.body.style.backgroundColor = "#f4f4f9";
+  }, []);
 
   const handleDelete = (id) => {
     const todoDelete = taskList.filter((todo) => todo.id !== id);
@@ -54,7 +52,7 @@ export default function Home() {
         padding: "24px 16px",
         borderRadius: "8px",
         marginInline: "auto",
-        backgroundColor: "#fff", // component-ийн background өнгө
+        backgroundColor: "#fff",
         boxShadow: "0 0 12px rgba(0, 0, 0, .16)",
         marginTop: "70px",
       }}

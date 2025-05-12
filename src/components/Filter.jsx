@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
 export const Filter = ({ setFilter }) => {
-  const [currentFilter, setCurrentFilter] = useState("all"); // эхэнд "all" сонгогдсон гэж үзнэ
+  const [currentFilter, setCurrentFilter] = useState("all");
 
   const handleFilterClick = (filter) => {
-    setCurrentFilter(filter); // Сонгосон фильтерийг хадгалах
-    setFilter(filter); // "setFilter" функцийг дуудах
+    setCurrentFilter(filter);
+    setFilter(filter);
   };
 
   return (
@@ -30,8 +30,8 @@ export const Filter = ({ setFilter }) => {
               paddingInline: "12px",
               textTransform: "capitalize",
               height: "30px",
-              backgroundColor: currentFilter === filter ? "#3c82f6" : "#ddd", // Сонгогдсон товчлуурын өнгө
-              color: currentFilter === filter ? "white" : "black", // Сонгогдсон товчлуурын текстийн өнгө
+              backgroundColor: currentFilter === filter ? "#3c82f6" : "#ddd",
+              color: currentFilter === filter ? "white" : "black",
             }}
             onClick={() => handleFilterClick(filter)}
           >
